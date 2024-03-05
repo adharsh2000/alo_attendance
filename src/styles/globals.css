@@ -1,0 +1,837 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+button {
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+
+table {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+a{
+  text-decoration: none;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+/*  common Header & Footer Area */
+
+.main-header {
+  background-color: #fff;
+  z-index: 99;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  max-width: 90vw;
+  padding: 15px 0px;
+}
+
+.main-header .sub-header .profile-area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* cursor: pointer; */
+}
+
+.main-header .sub-header .profile-area .split-profile h1 {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.main-header .sub-header .profile-area .split-profile p {
+  color: #8b8b8b;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mini-footer {
+  background: #626262;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 30px 0px;
+}
+
+/*  common Header & Footer End */
+
+
+
+
+
+
+/*  Attendance Area Start*/
+
+.parent-module .sub-parent-module .bg-img {
+  width: 100% !important;
+  position: absolute;
+  z-index: 50;
+}
+
+.parent-module .card-module .card {
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+  margin: auto;
+  max-width: 70vw;
+  text-align: center;
+  padding: 50px 0px 20px 0px;
+  position: relative;
+  z-index: 98;
+  line-height: 30px;
+}
+
+.parent-module .card-module {
+  text-align: center;
+}
+
+.parent-module .card-module span {
+  position: relative;
+  top: 45px;
+  z-index: 99;
+}
+
+.parent-module .card-module .card h1 {
+  color: #000;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.parent-module .card-module .card p {
+  color: #8b8b8b;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.parent-module .card-module .card p img {
+  width: 20px;
+  position: absolute;
+  margin-left: -25px;
+  margin-top: 4px;
+}
+
+.parent-module .card-module .card {
+  color: #56B0E3;
+}
+
+
+/*  Attendance Area End*/
+
+
+
+/* Time Module Start */
+
+.time-module {
+  text-align: center;
+  padding: 30px 0px;
+  line-height: 40px;
+}
+
+.time-module h1,
+.time-module h2 {
+  font-family: 'Kalam', cursive;
+}
+
+.time-module .session-module {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 30px 0px;
+}
+
+.time-module .session-module .log-in button {
+  background-color: #2D9B45;
+  border: none;
+  font-size: 15px;
+  padding-right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.time-module .session-module .log-in button:hover,
+.time-module .session-module .log-in button:active {
+  background-color: #026F1B;
+  transition-duration: 0.5s;
+}
+
+.time-module .session-module .break button {
+  background-color: #56B0E3;
+  border: none;
+  font-size: 15px;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.time-module .session-module .break button:hover,
+.time-module .session-module .break button:active {
+  background-color: #197ca0;
+  transition-duration: 0.5s;
+}
+
+.time-module .session-module .log-in button img {
+  background-color: #026F1B;
+  width: 30px;
+  padding: 10px;
+  border-radius: 5px 20px 20px 5px;
+}
+
+.time-module .session-module .log-out button {
+  background-color: #F35353;
+  border: none;
+  font-size: 15px;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.time-module .session-module .log-out button:hover,
+.time-module .session-module .log-out button:active {
+  background-color: #AD0B0B;
+  transition-duration: 0.5s;
+}
+
+.time-module .session-module .log-out button img {
+  background-color: #AD0B0B;
+  width: 30px;
+  padding: 10px;
+  border-radius: 20px 5px 5px 20px;
+}
+
+
+/*  Time Module End */
+
+/* Table Module Start */
+
+.table-module {
+  overflow: scroll !important;
+  margin: auto;
+  max-width: 90vw;
+  /* margin-bottom: 60px; */
+  white-space: nowrap;
+}
+
+.table-module table {
+  width: 100%;
+}
+
+.table-module table thead {
+  text-align: left;
+}
+
+.table-module .myTable {
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+.table-module .myTable thead {
+  background: linear-gradient(90deg, #DFB8EB 0%, #FEE5F7 31.33%, #FCE4F2 71.69%, #D4B6F1 101.96%);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.table-module .myTable td,
+.table-module .myTable th {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  color: #000;
+  font-weight: 500 !important;
+  padding: 15px;
+  padding-left: 25px !important;
+}
+
+.table-module .myTable tbody {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.table-module .myTable thead th img {
+  width: 15px;
+  margin-right: 7px;
+  position: relative;
+  top: 2px;
+}
+
+.table-module .myTable tbody tr td img {
+  width: 15px;
+  margin-right: 7px;
+  position: relative;
+  top: 2px;
+}
+
+.table-module .red {
+  color: red !important;
+}
+
+.red {
+  color: red !important;
+}
+
+.table-module .myTable tfoot {
+  background: linear-gradient(90deg, #DFB8EB 0%, #FEE5F7 31.33%, #FCE4F2 71.69%, #D4B6F1 101.96%);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.table-module .myTable tfoot .total {
+  font-weight: 900 !important;
+}
+
+.table-module .myTable td:hover {
+  color: #56B0E3 !important;
+}
+
+li.ant-pagination-options{
+  display: none !important;
+}
+
+
+/* Table Module End */
+
+
+
+/* scrollbar start*/
+
+::-webkit-scrollbar {
+  width: 3px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dcdcdc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2596be;
+  border-radius: 10px;
+}
+
+/* scrollbar End*/
+
+.ant-drawer-header,
+.ant-modal-footer {
+  display: none !important;
+}
+
+/* Popup Start */
+.popup {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.popup h3 {
+  font-size: 25px;
+}
+
+.popup .lg-btn {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px;
+}
+
+.lg-btn .lg-one button {
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 30px;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 14px;
+}
+
+.lg-btn .lg-two button {
+  border-radius: 10px;
+  background: #56B0E3;
+  padding: 10px 30px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Popuo End */
+
+
+
+
+
+
+
+
+/* Admin Module */
+
+.admin-module .sub-admin-module img {
+  width: 100%;
+  position: absolute;
+}
+
+.admin-module .card-admin-module {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  max-width: 92vw;
+  padding: 15px 0px;
+  text-align: center;
+  position: relative;
+}
+
+.admin-module .card-admin-module .count {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 40px;
+}
+
+.admin-module .card-admin-module .card {
+  position: relative;
+  top: 120px;
+}
+
+.admin-module .card-admin-module .card h1 {
+  color: #000;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.admin-module .card-admin-module .card p {
+  color: #8b8b8b;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.admin-module .card-admin-module .card h2 {
+  color: #56B0E3;
+}
+
+
+.admin-module .card-admin-module .count .one h1 {
+  color: #F5B63C;
+  font-size: 45px;
+}
+
+.admin-module .card-admin-module .count .two h1 {
+  color: #33C481;
+  font-size: 45px;
+}
+
+.admin-module .card-admin-module .count .three h1 {
+  color: #F84F64;
+  font-size: 45px;
+}
+
+.admin-module .card-admin-module .count p {
+  color: #7e7e7e;
+  font-size: 15px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .parent-module .card-module .card {
+    margin: auto;
+    max-width: 100vw;
+  }
+
+  .time-module .session-module {
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px !important;
+  }
+
+  .time-module .session-module .log-in button,
+  .time-module .session-module .log-out button {
+    gap: 10px !important;
+  }
+
+  .table-module,
+  .admin-table {
+    overflow: scroll;
+    white-space: nowrap;
+  }
+
+  .admin-module .card-admin-module,
+  .admin-module .card-admin-module .count {
+    flex-direction: column !important;
+    gap: 50px;
+  }
+
+  .admin-module .card-admin-module .card {
+    position: relative;
+    top: 0px;
+  }
+
+  .admin-table {
+    margin-top: 20px !important;
+  }
+
+  .break {
+    display: none;
+  }
+
+}
+
+
+
+
+/*  Admin Table Start */
+
+.admin-table {
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  background: #FFF;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.05);
+  margin: auto;
+  max-width: 90vw;
+  margin-top: 150px;
+  margin-bottom: 70px;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.admin-table h1 {
+  font-size: 22px;
+}
+
+.admin-table .admin-table-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-table .ad-table {
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table .admin-search {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.admin-table .admin-search img {
+  width: 22px;
+  padding: 2px 0px;
+}
+
+.admin-table .ad-table thead {
+  background: linear-gradient(90deg, #DFB8EB 0%, #FEE5F7 31.33%, #FCE4F2 71.69%, #D4B6F1 101.96%);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.admin-table .ad-table td,
+.admin-table .ad-table th {
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  color: #000;
+  font-weight: 500 !important;
+  padding: 15px;
+  padding-left: 25px !important;
+}
+
+.admin-table .ad-table tbody {
+  border: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.admin-table .ad-table thead th img,
+.admin-table .ad-table tbody td .clock {
+  width: 15px;
+  margin-right: 7px;
+  position: relative;
+  top: 2px;
+}
+
+.admin-table .ad-table tbody tr td .nam {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.admin-table .ad-table tbody tr td .pos {
+  color: grey;
+}
+
+.admin-search input {
+  min-width: 300px;
+}
+
+.admin-search button {
+  padding: 8px 30px;
+  background-color: #56B0E3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px !important;
+}
+
+.admin-table .ad-table tbody tr td svg {
+  width: 15px;
+}
+
+.admin-table .ad-table tbody tr td button {
+  border-radius: 10px;
+  padding: 2px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  white-space: nowrap;
+  font-size: 12px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.admin-table .ad-table tbody tr td button:hover {
+  color: #000;
+  background-color: #56B0E3;
+}
+
+
+.ad-table tbody tr td .edit,
+.ad-table tbody tr td .delete {
+  width: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.anticon-arrow-left {
+  color: #000 !important;
+  margin-right: 10px !important;
+}
+
+/*  Admin Table End */
+
+
+
+/* Login Page  start*/
+.alo-auth {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+#sign_in_password {
+  margin-left: -10px !important;
+}
+
+.sign-in .sign-carousel .people {
+  width: 200px;
+}
+
+.sign-in .sign-carousel .peopledot {
+  width: 40px;
+}
+
+.sign-in {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  max-width: 80vw;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.sign-in .sign-carousel h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+  color: #283742;
+  margin-top: 20px;
+}
+
+.sign-carousel h1 span {
+  color: #197ca0;
+}
+
+.sign-in .sign-carousel h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+  color: #283742;
+  margin-top: 10px;
+}
+
+.sign-in .sign-carousel h5 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 36px;
+  text-align: center;
+  color: #283742;
+}
+
+.sign-in .sign-form h5 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 15px;
+  color: #283742;
+  padding-top: 20px;
+}
+
+.sign-in .sign-form p,
+.sign-in .sign-form .ant-input-suffix {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 34px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.sign-in .sign-form .ant-form-item-label label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.4px !important;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #161519;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.sign-in .sign-form .ant-input,
+.sign-in .sign-form .ant-input-affix-wrapper {
+  background: rgba(144, 145, 156, 0.08) !important;
+  border-radius: 6px;
+  border: none !important;
+  font-size: 13px;
+  height: 40px;
+  padding: 0px 10px 0px 10px;
+}
+
+.sign-in .sign-form .ant-btn {
+  background: #2596be;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  height: 40px;
+  margin-top: 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.sign-in .sign-form .ant-btn:hover {
+  background: #197ca0 !important;
+}
+
+.ant-form-item-explain-error {
+  font-size: 12px;
+  color: #2596be !important;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 5px;
+}
+
+.ant-form-item-required::before {
+  display: none !important;
+}
+
+input {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+::placeholder {
+  font-family: 'DM Sans', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .alo-auth {
+    background: #f9f9f9;
+  }
+
+  .people {
+    width: 100px !important;
+    margin-left: 0px;
+  }
+
+  .sign-in {
+    flex-direction: column;
+    flex-direction: column-reverse;
+    padding: 0px 20px 20px 20px;
+    max-height: 100vh;
+  }
+
+  .sign-in .sign-carousel h1 {
+    font-size: 25px;
+  }
+
+  .sign-in .sign-form {
+    width: 100% !important;
+  }
+
+  .sign-carousel {
+    display: none;
+  }
+}
+
+@media (min-width:1025px) {
+
+  .sign-in .sign-form {
+    min-width: 350px;
+  }
+}
+
+/* Login Page End */
+
+button:disabled,
+button[disabled] {
+  background-color: #cccccc !important;
+  color: #666666;
+  cursor: no-drop;
+}
+
+.logout span {
+  font-size: 22px;
+}
