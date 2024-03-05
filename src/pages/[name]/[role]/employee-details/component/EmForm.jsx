@@ -91,35 +91,35 @@ const EmForm = (props) => {
           <Form.Item
             label="User Name"
             name="userName"
-            rules={[{ required: true }]}
+            rules={[{ required: true,message:"Username is required" }]}
           >
             <Input placeholder="Enter User Name" />
           </Form.Item>
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, type: "email" }]}
+            rules={[{ required: true, type: "email",message:"Email is required" }]}
           >
             <Input placeholder="Enter Email" />
           </Form.Item>
           <Form.Item
             label="Mobile No"
             name="mobileNo"
-            rules={[{ required: true }]}
+            rules={[{ required: true,message:"Mobile is required" }]}
           >
             <Input placeholder="Enter Mobile No" />
           </Form.Item>
           <Form.Item
             label="Designation"
             name="designation"
-            rules={[{ required: true }]}
+            rules={[{ required: true,message:"Designation is required" }]}
           >
             <Input placeholder="Enter Designation" />
           </Form.Item>
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true }]}
+            rules={[{ required: true,message:"Password is required" }]}
           >
             <Input.Password placeholder="Enter Password" />
           </Form.Item>
@@ -154,7 +154,7 @@ const EmForm = (props) => {
           <Form.Item
             label="Blood Group"
             name="bloodGroup"
-            rules={[{ required: true }]}
+            rules={[{ required: true,message:"Blood group is required" }]}
           >
             <Input placeholder="Enter Blood Group" />
           </Form.Item>
@@ -186,7 +186,7 @@ const EmForm = (props) => {
             />
                 </span> */}
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" loading={mutation.isLoading}>
               Add Employee
             </Button>
           </Form.Item>

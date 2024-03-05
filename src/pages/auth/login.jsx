@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Logo from "@/assets/logo.svg";
 import { setSessionStorageItem } from "@/helpers/SessionStorage";
 import { setLocalStorageItem } from "@/helpers/LocalStorage";
+import withPublicRoute from "@/helpers/PublicRoutes";
 
 const Login = () => {
 
@@ -93,4 +94,4 @@ const Login = () => {
         </Fragment>
     )
 }
-export default Login;
+export default withPublicRoute(Login);

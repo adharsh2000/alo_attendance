@@ -71,6 +71,11 @@ const appTimeSheet = async (id) => {
     return data;
 };
 
+const appTimeSheetAdmin = async (id,page) => {
+    const { data } = await client.get(`/timeSheet/list/pagination?employeeId=${id}&page=${page}&limit=10`);
+    return data;
+};
+
 const deleteEmployee = async (id) => {
     const { data } = await client.delete(`/employee/${id}`)
     return data;
@@ -95,5 +100,6 @@ export {
     getRoles,
     addEmployee,
     deleteEmployee,
-    updateEmployee
+    updateEmployee,
+    appTimeSheetAdmin
 };

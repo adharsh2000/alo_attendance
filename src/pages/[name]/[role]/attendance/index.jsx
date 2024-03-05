@@ -5,6 +5,7 @@ import EmployeeLayout from "@/layouts/EmployeeLayout";
 import Seo from "@/helpers/Seo";
 import { useAppEmployeeDashboard, useAppEmployeeTimeSheet } from "@/hooks/all/all";
 import { getSessionStorageItem } from "@/helpers/SessionStorage";
+import withProtectedRoute from "@/helpers/ProtectedRoutes";
 
 const AtProfileArea = dynamic(() => import('./component/AtProfileArea'), { ssr: false })
 const AtTable = dynamic(() => import('./component/AtTable'), { ssr: false })
@@ -57,4 +58,4 @@ const Attendance = () => {
     )
 }
 
-export default Attendance;
+export default withProtectedRoute(Attendance);

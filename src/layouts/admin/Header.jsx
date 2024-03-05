@@ -2,9 +2,12 @@ import { Fragment, useState } from "react";
 import { Avatar, Drawer } from "antd"
 import ImageTag from "@/helpers/ImageTag";
 import Logo from "@/assets/logo.svg";
+import { LogoutOutlined } from "@ant-design/icons";
+import { removeSessionStorageItem } from "@/helpers/SessionStorage";
+import { useRouter } from "next/router";
 
 const AdminHeader = () => {
-
+    let router = useRouter();
     const [open, setOpen] = useState(false);
 
     const showDrawer = () => {
@@ -13,6 +16,15 @@ const AdminHeader = () => {
     const onClose = () => {
         setOpen(false);
     };
+
+    const logOut = () => {
+        removeSessionStorageItem("role");
+        removeSessionStorageItem("token");
+        removeSessionStorageItem("id");
+        removeSessionStorageItem("log_id");
+        removeSessionStorageItem("user");
+        router.push("/")
+    }
 
     return (
         <Fragment>
@@ -27,13 +39,14 @@ const AdminHeader = () => {
                             <h1>Natarajan</h1>
                             <p>Proprietor</p>
                         </div>
+                        <div className="logout"><LogoutOutlined onClick={logOut} /></div>
                     </div>
                 </div>
             </div>
 
-            <Drawer placement="right" onClose={onClose} open={open}>
+            {/* <Drawer placement="right" onClose={onClose} open={open}>
                 <h1>Profile</h1>
-            </Drawer>
+            </Drawer> */}
         </Fragment>
     )
 }

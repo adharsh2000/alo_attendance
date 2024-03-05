@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import AdminLayout from "@/layouts/AdminLayout";
 import dynamic from "next/dynamic";
 import Seo from "@/helpers/Seo";
+import withProtectedRoute from "@/helpers/ProtectedRoutes";
 
 const EmProfileArea = dynamic(() => import('./component/EmProfileArea'), { ssr: false })
 const EmTable = dynamic(() => import('./component/EmTable'), { ssr: false })
@@ -22,4 +23,4 @@ const Admin = () => {
 
     )
 }
-export default Admin;
+export default withProtectedRoute(Admin);

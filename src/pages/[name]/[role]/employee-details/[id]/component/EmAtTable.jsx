@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { SortAscendingOutlined, ArrowLeftOutlined } from '@ant-design/icons';
 import ImageTag from "@/helpers/ImageTag";
 import Time from "@/assets/time.svg";
@@ -8,18 +8,20 @@ import Moon from "@/assets/moon.svg";
 import LinkTag from "@/helpers/LinkTag";
 import { Pagination, Tabs } from 'antd';
 import { useRouter } from "next/router";
-import { appTimeSheet } from "@/services/all/all";
+import { appTimeSheet, appTimeSheetAdmin } from "@/services/all/all";
 import { useQuery } from "react-query";
 import { formatDate, formatHours, formatTime } from "@/helpers/Common";
 import Paginator from "@/components/Paginator";
+import Loader from "@/components/Loader";
 
 
 const EmAtTable = () => {
     const router = useRouter()
+    const [page,setPage] = useState(1);
 
-    const {id} = router.query
-    console.log(id)
-    const { data, isLoading, isError } = useQuery(['timesheet',id], () =>appTimeSheet(id));
+    const {id,username} = router.query
+    // console.log(router,username)
+    const { data, isLoading, isError } = useQuery(['admintimesheet',id,page], () =>appTimeSheetAdmin(id,page-1));
 
     const onChange = (key) => {
         console.log(key);
@@ -44,11 +46,14 @@ const EmAtTable = () => {
     ];
 
     return (
+        isLoading ? (
+            <Loader message="Loading..." width="50vh" />
+        ) : (
         <Fragment>
             <div className="admin-table">
                 <div className="admin-table-parent">
                     <div className="admin-head">
-                        <h1> <LinkTag href="/natarajan/employee/employee-details" label={<ArrowLeftOutlined />} />  Nishanth Attendance</h1>
+                        <h1> <LinkTag href="/natarajan/employee/employee-details" label={<ArrowLeftOutlined />} />  {username} Attendance</h1>
                     </div>
                     <div>
                         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
@@ -71,7 +76,7 @@ const EmAtTable = () => {
                             <th><ImageTag src={Time?.src} alt={Time?.src} />Working Hours <SortAscendingOutlined /></th>
                         </thead>
                         <tbody>
-                            {data?.data?.map((item, a) => (
+                            {data?.data?.data?.map((item, a) => (
                             <tr key={a}>
                                 <td>{formatDate(item?.date)}</td>
                                 <td className="red">Fever</td>
@@ -83,16 +88,18 @@ const EmAtTable = () => {
                             ))}
                         </tbody>
                         <tfoot>
-                            <tr>
+                            {/* <tr>
                                 <td colSpan={5} className="txt-right total">Nishanth Last 10 Days Working Hours</td>
                                 <td>59hrs 52min</td>
-                            </tr>
+                            </tr> */}
                         </tfoot>
                     </table>
+                    <Paginator page={page} setPage={setPage} totalRecords={data?.data?.totalCount} />
                 </div>
             </div>
                 
         </Fragment>
+        )
     )
 }
 export default EmAtTable;

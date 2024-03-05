@@ -109,7 +109,7 @@ const EmTable = () => {
                                             <td><ImageTag src={Clock?.src} alt={Clock?.src} className="clock" />04 Jun 2021</td>
                                             <td>₹ 7.5 lPA</td>
                                             <td>
-                                                <LinkTag href={`/natarajan/employee/employee-details/${item?._id}`} label={
+                                                <LinkTag href={`/natarajan/employee/employee-details/${item?._id}?username=${item?.userName}`} label={
                                                     <button>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                                                             <g opacity="0.5">

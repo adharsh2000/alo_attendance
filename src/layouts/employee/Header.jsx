@@ -24,6 +24,7 @@ const EmployeeHeader = ({ profileData }) => {
         removeSessionStorageItem("token");
         removeSessionStorageItem("id");
         removeSessionStorageItem("log_id");
+        removeSessionStorageItem("user");
         router.push("/")
     }
 

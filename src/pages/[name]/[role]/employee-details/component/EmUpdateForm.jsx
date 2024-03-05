@@ -74,7 +74,9 @@ useEffect(() => {
       console.log("Employee added successfully:", data);
       // Handle success, e.g., show a success message
       message.success("employee Updated Succesfully")
-      form.resetFields();
+      // form.resetFields();
+      // setStartTime("")
+      // setEndTime("")
       queryClient.invalidateQueries({
         queryKey:["employees"]
       })
@@ -214,8 +216,8 @@ useEffect(() => {
             />
                 </span> */}
           <Form.Item>
-            <Button type="primary" htmlType="submit">
-              {splitId} Employee
+            <Button type="primary" htmlType="submit" loading={mutation.isLoading}>
+              Update Employee
             </Button>
           </Form.Item>
         </Form>
