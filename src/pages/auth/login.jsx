@@ -32,7 +32,7 @@ const Login = () => {
                 }
             },
             onError: (error) => {
-                message.error("Something went wrong..");
+                // message.error("Something went wrong..");
                 console.log(error)
             }
         });
