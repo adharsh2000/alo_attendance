@@ -15,6 +15,7 @@ const Login = () => {
     const { mutate: appLogin, isLoading: loading } = useAppLogin();
     const [role, setRole] = useState(null);
     const [eName, setEname] = useState(null);
+    const [userId,setUserid] = useState(null)
 
     const onFinish = (values) => {
         let formData = JSON.stringify(values)
@@ -27,6 +28,7 @@ const Login = () => {
                     setSessionStorageItem("token", item?.data?.token);
                     setRole(item?.data?.data?.roleData?.role);
                     setEname(item?.data?.data?.userName);
+                    setUserid(item?.data?.data?.userId)
                     const userData = JSON.stringify(item?.data)
                     setSessionStorageItem("user",userData)
                 }
@@ -55,7 +57,7 @@ const Login = () => {
             if (role === "Admin") {
                 router.push(`/${eName?.toLowerCase()}/${role?.toLowerCase()}/employee-details`)
             } else {
-                router.push(`/${eName?.toLowerCase()}/${role?.toLowerCase()}/attendance`)
+                router.push(`/${eName?.toLowerCase()}/${role?.toLowerCase()}/attendance?userid=${userId}`)
             }
         }
     }, [role])

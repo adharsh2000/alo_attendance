@@ -10,12 +10,17 @@ export const useAppEmployeeDashboard = (id) => {
     });
 };
 
+// export const useAppEmployeeTimeSheet = (id) => {
+//     return useQuery(["appTimeSheet", id], () => all.appTimeSheet(id), {
+//         enabled: false,
+//         retry: false,
+//         refetchOnReconnect: true,
+//         refetchOnWindowFocus: false,
+//     });
+// };
 export const useAppEmployeeTimeSheet = (id) => {
-    return useQuery(["appTimeSheet", id], () => all.appTimeSheet(id), {
-        enabled: false,
-        retry: false,
-        refetchOnReconnect: true,
-        refetchOnWindowFocus: false,
+    return useQuery(["appTimeSheet", id], () => all.appTenDaysTimeSheet(id), {
+        
     });
 };
 
@@ -23,8 +28,7 @@ export const useLoginDashboard = () => {
     const queryClient = useQueryClient();
     return useMutation((formData) => all.loginDashboard(formData), {
         onSuccess: () => {
-            queryClient.refetchQueries('appEmployeeDashboard');
-            queryClient.refetchQueries('appTimeSheet');
+            queryClient.refetchQueries(['appEmployeeDashboard', 'appTimeSheet']);
         }
     });
 };
@@ -33,8 +37,7 @@ export const useLogoutDashboard = (formData) => {
     const queryClient = useQueryClient();
     return useMutation((formData) => all.logoutDashboard(formData), {
         onSuccess: () => {
-            queryClient.refetchQueries('appEmployeeDashboard');
-            queryClient.refetchQueries('appTimeSheet');
+            queryClient.refetchQueries(['appEmployeeDashboard', 'appTimeSheet']);
         }
     });
 };

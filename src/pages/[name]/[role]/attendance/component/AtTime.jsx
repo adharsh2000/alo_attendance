@@ -8,6 +8,7 @@ import Two from "@/assets/one.svg";
 import { Input, Modal, message } from "antd";
 import { useLoginDashboard, useLogoutDashboard } from "@/hooks/all/all";
 import { removeSessionStorageItem } from "@/helpers/SessionStorage";
+import { useQueryClient } from "react-query";
 
 const { TextArea } = Input;
 const now = new Date();
@@ -15,7 +16,7 @@ const now = new Date();
 const format = new Date(now.getTime() + 5.5 * 60 * 60 * 1000)
 
 const Time = ({ profileData }) => {
-
+    const queryClient = useQueryClient()
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isBreakOpen, setIsBreakOpen] = useState(false);
     const [isLogOutOpen, setIsLogOutOpen] = useState(false);
@@ -40,6 +41,9 @@ const Time = ({ profileData }) => {
             onSuccess: (item) => {
                 if (item.code === 200) {
                     message.success(item?.message);
+                    queryClient.refetchQueries({
+                        queryKey:["appEmployeeDashboard"]
+                    })
                 }
             },
             onError: (error) => {
@@ -103,6 +107,9 @@ const Time = ({ profileData }) => {
                     message.success(item?.message);
                     removeSessionStorageItem("log_id");
                     setRemark(null);
+                    queryClient.refetchQueries({
+                        queryKey:["appEmployeeDashboard"]
+                    })
                 }
             },
             onError: (error) => {
@@ -138,12 +145,24 @@ const Time = ({ profileData }) => {
         setCurrentDateTime(currentDateTime);
     };
 
+    // useEffect(() => {
+    //     setInterval(updateDateTime, 1000);
+    // })
+    // useEffect(() => {
+    //     setInterval(updateDateTime);
+    // }, [])
+
     useEffect(() => {
-        setInterval(updateDateTime, 1000);
-    })
+        const intervalId = setInterval(updateDateTime, 1000);
+    
+        return () => clearInterval(intervalId); // Clear interval on unmount
+    }, []); // Empty dependency array to run effect only once
+    
     useEffect(() => {
-        setInterval(updateDateTime);
-    }, [])
+        const intervalId = setInterval(updateDateTime, 1000);
+    
+        return () => clearInterval(intervalId); // Clear interval on unmount
+    }, []);
 
     return (
         <Fragment>

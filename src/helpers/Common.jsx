@@ -8,9 +8,17 @@ export const formatDate = (date) => {
     return moment(date).format('DD/MM/YYYY');
   };
 
-  export const formatTime = (time) => {
-    return moment(time).format('HH:mm');
+//   export const formatTime = (time) => {
+//     return moment(time).format('HH:mm');
+// };
+
+
+export const formatTime = (timestamp) => {
+  const adjustedTime = moment(timestamp).subtract(5, 'hours').subtract(30, 'minutes');
+  const formattedTime = adjustedTime.format('hh:mm A');
+  return formattedTime;
 };
+
 
 
 export const formatHours = (totalWorkHours) => {

@@ -15,9 +15,10 @@ const withPublicRoute = (WrappedComponent) => {
       const isAuthenticated = getSessionStorageItem('token');
       const user = JSON.parse(getSessionStorageItem("user"))
       const role = getSessionStorageItem("role")
+      const id = getSessionStorageItem("id");
       console.log({user,role})
       if (isAuthenticated) {
-        router.push(`/${user?.data?.userName === "Admin" ? "natarajan" : user?.data?.userName}/${role}/${role === "Admin" ? "employee-details":"attendance"}`); // Redirect to dashboard if token exists
+        router.push(`/${user?.data?.userName === "admin" ? "natarajan" : user?.data?.userName}/${role}/${role === "Admin" ? "employee-details":`attendance?userid=${id}`}`); // Redirect to dashboard if token exists
       } else {
         setLoading(false); // Finished checking token
       }

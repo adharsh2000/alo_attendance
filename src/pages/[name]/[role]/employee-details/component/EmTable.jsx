@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { QuestionCircleOutlined, SortAscendingOutlined } from '@ant-design/icons';
 import ImageTag from "@/helpers/ImageTag";
 import Time from "@/assets/time.svg";
@@ -32,8 +32,15 @@ const EmTable = () => {
         setOpen(true);
     };
 
+    const inputRef = useRef(null)
 
-
+    useEffect(() => {
+        if (search.trim() !== "") {
+            inputRef.current.focus();
+            // console.log(inputRef.current.getAttribute("data-time"));
+        }
+    }, [search]);
+    
     const onClose = () => {
         setOpen(false);
     };
@@ -79,7 +86,7 @@ const EmTable = () => {
                                 </div>
                                 <div className="admin-search">
                                     <div>
-                                        <Input value={search} onChange={(e) => setSearch(e.target.value)} prefix={<ImageTag src={Search?.src} alt={Search?.src} />} />
+                                        <Input data-time="2000-cheking" ref={inputRef} value={search} onChange={(e) => setSearch(e.target.value)} prefix={<ImageTag src={Search?.src} alt={Search?.src} />} />
                                     </div>
                                     <div>
                                         <button onClick={() => showModal("Add")} > + Add Employee</button>

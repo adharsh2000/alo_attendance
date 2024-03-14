@@ -4,7 +4,7 @@ import ImageTag from "@/helpers/ImageTag";
 import One from "@/assets/rect.svg";
 import Clock from "@/assets/clock.svg";
 
-const AtProfileArea = ({ profileData }) => {
+const AtProfileArea = ({ profileData,isLoading }) => {
     return (
         <Fragment>
             <div className="parent-module">
